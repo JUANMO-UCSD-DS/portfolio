@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Juan Mo</strong> — <em>j8mo@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: Police use of force became less of a concern between 1995 and 2019.</h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="projects_img/fado_percent_vs_year.png" 
+          alt="Complaint percentages by year" 
+          style="display: block; width: 100%; height: auto;" />
+
+          <figcaption>
+            Force allegations make up a shrinking share of complaints
+          </figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            Limited the time range to 1995–2019 (Score: +0.5). I excluded 
+            2020 because the dataset ends partway through that year, so 
+            its counts would show a misleading drop. I also removed years
+             before 1995 because they contain very few cases, so a handful
+              of complaints could swing the percentages sharply and distract
+               from the overall trend. Restricting the range makes every year
+                shown reliable. However, starting in 1995 also begins the chart
+                 near force’s peak share (about 50%), which makes the later 
+                 decline look as large as possible.
+          </li>
+          <li>
+            Percentages instead of counts (Score: −1). I calculated force 
+            allegations as a percentage of all allegations within each year. 
+            This highlights their declining share and suggests improvement, 
+            but it can mislead readers into assuming that the number of force 
+            allegations also declined.
+          </li>
+
+          <li>
+            Orange emphasis with gray context (Score: +1.5). I highlighted 
+            force allegations in orange while showing the other categories 
+            in gray. This directs attention to force while preserving the 
+            context needed to understand the percentage.
+          </li>
+
+          <li>
+            Stacked area chart with force at the bottom (Score: +1.5). 
+            Placing force along a consistent zero baseline makes its 
+            changing share easy to follow. The area chart emphasizes 
+            the broad trend, although individual yearly values are harder 
+            to compare than in a line chart.
+          </li>
+          <li>
+            Framing through the caption (Score: −0.5). The caption emphasizes 
+            the shrinking share of force allegations, encouraging an 
+            interpretation of improvement. It accurately describes the 
+            measure, but gives less attention to the possibility that 
+            growth in other allegation categories explains the decline.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="projects_img/force_count_vs_year.png" 
+          alt="force allegation counts by year" 
+          style="width: 100%; max-width: 1000px; height: auto;" />
+          <figcaption>Force allegation counts increased overall.</figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            Limited the time range to 1995–2019 (Score: +0.5). I excluded 
+            2020 because the dataset ends partway through that year, so 
+            its counts would show a misleading drop. I also removed years
+             before 1995 because they contain very few cases, so a handful
+              of complaints could swing the percentages sharply and distract
+               from the overall trend. Restricting the range makes every year
+                shown reliable. However, starting in 1995 also begins the chart
+                 near force’s peak share (about 50%), which makes the later 
+                 decline look as large as possible.
+          </li>
+          <li>
+            Counts instead of percentages (Score: +1). I displayed annual 
+            counts to reveal the volume hidden by the percentage chart. 
+            This challenges the impression of improvement, although 
+            counts alone do not account for changes in reporting or 
+            the number of police–public encounters.
+          </li>
+
+          <li>
+            Bars with a zero baseline (Score: +2). I used bars beginning 
+            at zero so their heights represent counts proportionally. 
+            This makes differences between years easy to compare without 
+            exaggerating them through a truncated axis.
+          </li>
+
+          <li>
+            Displaying only force allegations (Score: +1.5). I removed the 
+            other allegation categories to focus directly on force. This 
+            makes the yearly counts clearer, although it leaves out the 
+            broader complaint composition shown in Figure 1.
+          </li>
+
+          <li>
+            Emphasizing the overall increase (Score: −0.5). The tittle directs 
+            readers toward the contrast between the early and later years. 
+            However, it simplifies a fluctuating pattern that also includes 
+            declines after peaks and a sharp drop in the final year.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>Creating these visualizations showed me how the choice of measure 
+          can change the story readers take away from the same data. The 
+          percentage chart suggests improvement because force allegations 
+          occupy a shrinking share of all allegations. The count chart 
+          challenges that impression because later years generally contain 
+          more force allegations than earlier years. These patterns can 
+          coexist: a category’s percentage can decline while its count 
+          increases if the total grows faster.</p>
+
+        <p>The most difficult part was deciding what “less of a concern” means.
+           A smaller share of force allegations may suggest improvement, but 
+           higher allegation counts can suggest that force remains a significant concern. Color and 
+          chart layout helped communicate each argument, but the choice 
+          between percentages and counts had the strongest effect. 
+          Comparing the charts made clear how an accurate calculation 
+          can still support an incomplete interpretation.</p>
+        <p>
+          I define ethical visualization as presenting accurate values 
+          while making the measure, scope, and limitations understandable. 
+          Highlighting a category or choosing a clear chart type is 
+          acceptable persuasion when readers can understand what is 
+          being shown. It becomes misleading when the presentation 
+          encourages conclusions the data cannot support, such as 
+          treating a smaller percentage as proof of fewer incidents. 
+          A fuller assessment would show both counts and percentages, 
+          explain the dataset’s coverage, and distinguish allegations 
+          from confirmed events.
+        </p>
+ 
+      </section>
+    </main>
+  </body>
+</html>
