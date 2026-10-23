@@ -1,0 +1,15 @@
+#profile-stats dl{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+#profile-stats dt{
+    grid-row: 1;
+    text-transform:UPPERCASE;
+    color:gray;
+}
+#profile-stats dd{
+    grid-row: 2;
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+}
