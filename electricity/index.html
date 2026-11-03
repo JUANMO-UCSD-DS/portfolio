@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Electricity Access Around the World</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+  <script type="module" src="./energy.js"></script>
+</head>
+
+<body>
+  <h1>Where is electricity access still limited?</h1>
+
+  <p>
+    Explore the percentage of each country's population
+    with access to electricity.
+  </p>
+
+  <label for="year-slider">
+    Year: <strong id="year-label"></strong>
+  </label>
+
+  <input
+    id="year-slider"
+    type="range"
+    min="0"
+    max="0"
+    value="0"
+    disabled
+  >
+
+  <p id="status" role="status">Loading data...</p>
+
+  <div id="map"></div>
+
+  <p class="note">
+    Orange indicates lower access; blue indicates higher access.
+    Countries without observations remain gray.
+    The color scale stays the same across years.
+  </p>
+</body>
+</html>

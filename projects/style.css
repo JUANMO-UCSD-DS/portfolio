@@ -1,0 +1,23 @@
+.searchBar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 18px;
+}
+
+&:has(path:hover){
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+path{
+  transition:30ms;
+}
+
+.selected {
+  --color:oklch(50% 45% 0) !important;
+  &:is(path) {
+    fill: var(--color);
+  }
+}

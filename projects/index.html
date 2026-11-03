@@ -5,10 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>projects_JM</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <script type="module" src="../global.js"></script>
     <script type="module" src="projects.js"></script>
 </head>
 <body>
+    <div class="projects-pie-plot-container">
+        <!-- use svg circle to generate a pie plot -->
+        <svg id="projects-pie-plot" viewBox="-50 -50 100 100">
+            <!-- <circle cx="0" cy="0" r="50"  fill="red" /> -->
+        </svg>
+        <ul class="legend"></ul>
+    </div>
+    <input class="searchBar" type="search" aria-label="Search projects" placeholder="Search projects..."/>
+    
+
+
+
     <!-- <nav class="current">
         <ul>
             <li><a href="../">Home</a></li>
