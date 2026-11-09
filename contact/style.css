@@ -1,0 +1,9 @@
+/* contact form layout */
+input,textarea,button,select {font: inherit;}
+form{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  gap:1em;
+}
+form.label{display:contents}
+button{grid-column: 1/-1;}

@@ -14,6 +14,7 @@ let pages=[
     { title: "Projects", url: "projects/" },
     { title: "Resume", url: "resume/" },
     { title: "Contact", url: "contact/" },
+    { title: "Meta", url: "meta/" },
     { title: "GitHub", url: "https://github.com/juanmo-ucsd-ds" },
 ];
 let nav = document.createElement('nav');

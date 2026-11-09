@@ -1,0 +1,87 @@
+/* styling resume page */
+
+.Resume{
+  /* background-color:#0f172a; */
+  /* color:white; */
+  max-width: 100ch;
+}
+.Resume nav{
+  background-color: inherit;
+}
+.Resume nav a:hover{
+  background-color: rgb(195, 134, 195);
+}
+.Resume h2{
+  color:rgb(80, 255, 71);
+  font-size: 2rem;
+  border-bottom: 2px solid rgb(80, 255, 71);
+}
+.Resume h3{
+  color:lightsalmon;
+  margin-bottom: 10px;
+}
+.Resume-Education-heading{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1rem;
+  color:lightsalmon;
+}
+
+.Resume-Work-Experience-heading{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1rem;
+  color:lightsalmon;
+}
+.Resume-Projects-heading{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1rem;
+  color:lightsalmon;
+}
+
+
+
+
+
+.Resume-sibebar nav{
+  display: flex;
+  flex-direction: column;
+  border-bottom:none;
+}
+.Resume-sibebar nav a {
+  display: block;
+  padding: 0.3em 0.6em;
+  border-left: 3px;
+  border-radius: 0 0.4em 0.4em 0;
+  transition: all 0.2s ease;
+}
+
+.Resume-sibebar nav a:hover {
+  border-left-color:none;
+  background-color: transparent;
+  border-bottom:none;
+  background-color: aliceblue;
+}
+.Resume-sibebar nav ul li{
+  display:block;
+  font-size:1.5em;
+  color: blueviolet;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+.Resume-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  gap: clamp(1em, 4%, 4em);
+  align-items: start;
+}
+
+.Resume-sibebar {
+  position: sticky;
+  top: 1em;
+}
